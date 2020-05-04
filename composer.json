@@ -1,0 +1,39 @@
+{
+    "version": "1.0.0",
+    "name": "robuust/craft-sentry-log-target",
+    "description": "Sentry Log Target for Craft 3",
+    "type": "craft-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bob Olde Hampsink",
+            "email": "bob@robuust.digital"
+        }
+    ],
+    "support": {
+        "email": "bob@robuust.digital"
+    },
+    "extra": {
+        "schemaVersion": "1.0.0",
+        "handle": "sentry-log-target",
+        "name": "Sentry Log Target",
+        "developer": "Robuust",
+        "developerUrl": "https://robuust.digital",
+        "documentationUrl": "https://github.com/robuust/craft-sentry-log-target/blob/master/README.md",
+        "changelogUrl": "https://github.com/robuust/craft-sentry-log-target/blob/master/CHANGELOG.md",
+        "downloadUrl": "https://github.com/robuust/craft-sentry-log-target/releases/latest",
+        "hasSettings": false,
+        "hasCpSection": false
+    },
+    "require": {
+        "php": "^7.0",
+        "craftcms/cms": "^3.1",
+        "php-http/guzzle6-adapter": "^2.0",
+        "olegtsvetkov/yii2-sentry": "^1.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "robuust\\sentrylogtarget\\": "src/"
+        }
+    }
+}
