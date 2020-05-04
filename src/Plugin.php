@@ -7,6 +7,7 @@ use OlegTsvetkov\Yii2\Sentry\Component;
 use OlegTsvetkov\Yii2\Sentry\LogTarget;
 use robuust\sentrylogtarget\models\Settings;
 use Sentry\State\Scope;
+use yii\log\Dispatcher;
 
 /**
  * Sentry Log Target Plugin.
@@ -55,11 +56,14 @@ class Plugin extends \craft\base\Plugin
         });
 
         // Set Sentry Log Target
-        Craft::getLogger()->dispatcher->targets[] = new LogTarget([
-            'component' => $this->sentry,
-            'levels' => $this->settings->levels,
-            'except' => $this->settings->except,
-        ]);
+        $dispatcher = Craft::getLogger()->dispatcher;
+        if ($dispatcher instanceof Dispatcher) {
+            $dispatcher->targets[] = new LogTarget([
+                'component' => $this->sentry,
+                'levels' => $this->settings->levels,
+                'except' => $this->settings->except,
+            ]);
+        }
     }
 
     /**
