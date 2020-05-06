@@ -1,3 +1,7 @@
+## 1.0.3 - 2020-05-06
+### Added
+- Added support for overriding default Sentry settings
+
 ## 1.0.2 - 2020-05-06
 ### Changed
 - Loosened dependency version restrictions

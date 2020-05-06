@@ -32,9 +32,10 @@ Create a `config/sentry-log-target.php` config file with the following contents:
 
 return [
     '*' => [
-        'dsn'    => '$SENTRY_DSN' ?: 'https://example@sentry.io/123456789', // Set as string or use environment variable.
-        'levels' => ['error', 'warning'],
-        'except' => ['yii\web\HttpException:40*'],
+        'dsn'            => '$SENTRY_DSN' ?: 'https://example@sentry.io/123456789', // Set as string or use environment variable.
+        'sentrySettings' => [], // Use options from Sentry PHP SDK as-is.
+        'levels'         => ['error', 'warning'],
+        'except'         => ['yii\web\HttpException:40*'],
     ],
 ];
 ```

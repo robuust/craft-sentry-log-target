@@ -32,6 +32,7 @@ class Plugin extends \craft\base\Plugin
             'sentry' => [
                 'class' => Component::class,
                 'dsn' => Craft::parseEnv($this->settings->dsn),
+                'sentrySettings' => $this->settings->sentrySettings,
             ],
         ]);
 

@@ -3,6 +3,7 @@
 namespace robuust\sentrylogtarget\models;
 
 use craft\base\Model;
+use yii\log\Logger;
 
 /**
  * Settings model.
@@ -17,7 +18,12 @@ class Settings extends Model
     /**
      * @var array
      */
-    public $levels = ['error', 'warning'];
+    public $sentrySettings = [];
+
+    /**
+     * @var array|string
+     */
+    public $levels = Logger::LEVEL_ERROR | Logger::LEVEL_WARNING;
 
     /**
      * @var array
