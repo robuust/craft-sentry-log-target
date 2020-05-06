@@ -1,5 +1,5 @@
 {
-    "version": "1.0.1",
+    "version": "1.0.2",
     "name": "robuust/craft-sentry-log-target",
     "description": "Sentry Log Target for Craft 3",
     "type": "craft-plugin",
@@ -28,7 +28,7 @@
     "require": {
         "php": "^7.0",
         "craftcms/cms": "^3.1",
-        "php-http/guzzle6-adapter": "^2.0",
+        "php-http/guzzle6-adapter": "^1.0 || ^2.0",
         "olegtsvetkov/yii2-sentry": "^1.4"
     },
     "autoload": {
