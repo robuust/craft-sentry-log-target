@@ -1,5 +1,5 @@
 {
-    "version": "1.0.3",
+    "version": "1.1.0",
     "name": "robuust/craft-sentry-log-target",
     "description": "Sentry Log Target for Craft 3",
     "type": "craft-plugin",

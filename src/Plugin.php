@@ -3,9 +3,11 @@
 namespace robuust\sentrylogtarget;
 
 use Craft;
+use craft\helpers\ArrayHelper;
 use OlegTsvetkov\Yii2\Sentry\Component;
 use OlegTsvetkov\Yii2\Sentry\LogTarget;
 use robuust\sentrylogtarget\models\Settings;
+use Sentry\Event;
 use Sentry\State\Scope;
 use yii\log\Dispatcher;
 
@@ -28,12 +30,16 @@ class Plugin extends \craft\base\Plugin
         parent::init();
 
         // Set Sentry Component
-        $this->setComponents([
-            'sentry' => [
-                'class' => Component::class,
-                'dsn' => Craft::parseEnv($this->settings->dsn),
-                'sentrySettings' => $this->settings->sentrySettings,
-            ],
+        $this->set('sentry', [
+            'class' => Component::class,
+            'dsn' => Craft::parseEnv($this->settings->dsn),
+            'sentrySettings' => ArrayHelper::merge([
+                'before_send' => function (Event $event): ?Event {
+                    if (in_array((string) $event->getLevel(), $this->settings->levels)) {
+                        return $event;
+                    }
+                },
+            ], $this->settings->sentrySettings),
         ]);
 
         // Set Sentry Craft Scope

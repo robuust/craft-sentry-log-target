@@ -1,3 +1,7 @@
+## 1.1.0 - 2020-05-07
+### Changed
+- Levels are now one of error/warning/info and are also applied to non-Yii errors
+
 ## 1.0.3 - 2020-05-06
 ### Added
 - Added support for overriding default Sentry settings
