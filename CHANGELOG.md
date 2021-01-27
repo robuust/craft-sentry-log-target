@@ -1,3 +1,7 @@
+## 1.1.1 - 2021-01-27
+### Changed
+- Added PHP8 support
+
 ## 1.1.0 - 2020-05-07
 ### Changed
 - Levels are now one of error/warning/info and are also applied to non-Yii errors
